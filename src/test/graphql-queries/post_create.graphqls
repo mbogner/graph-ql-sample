@@ -1,0 +1,6 @@
+mutation {
+    createPost(name: "test", author: "07528933-649b-434c-95e2-0f81ef045516") {
+        id
+        name
+    }
+}

@@ -1,0 +1,10 @@
+{
+    allUsers(page: 0, size: 1000) {
+        id
+        name
+        posts {
+            id
+            name
+        }
+    }
+}

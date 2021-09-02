@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - ./src/test/docker/postgres/init/:/docker-entrypoint-initdb.d/:ro
+    environment:
+      POSTGRES_DB: database
+      POSTGRES_USER: database
+      POSTGRES_PASSWORD: database
+      POSTGRES_MULTIPLE_DATABASES: database_test
+      PGDATA: /var/lib/postgresql/data/dispo

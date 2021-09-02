@@ -1,0 +1,14 @@
+type User {
+    id: ID!
+    name: String
+    posts: [Post]
+}
+
+extend type Query {
+    me: User
+    allUsers(page: Int = 0, size: Int = 2): [User]
+}
+
+extend type Mutation {
+    createUser(name: String!) : User!
+}

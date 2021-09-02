@@ -1,0 +1,10 @@
+{
+    allPosts(page: 0, size: 1000) {
+        id
+        name
+        author {
+            id
+            name
+        }
+    }
+}

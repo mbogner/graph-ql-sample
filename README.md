@@ -11,8 +11,8 @@ It provides graphiql interface under http://localhost:8080/graphiql for easy tes
 The graphql schema of the application is split into multiple files so that every entity has its own .graphqls file.
 Those are placed in src/main/resources/graphql and picked up by spring automatically.
 
+#### _root.graphqls
 ```graphql
-### _root.graphqls
 # The Root Query for the application
 type Query {
 }
@@ -20,23 +20,10 @@ type Query {
 # The Root Mutation for the application
 type Mutation {
 }
+```
 
-### post.graphqls
-type Post {
-    id: ID!
-    name: String
-    author: User!
-}
-
-extend type Query {
-    allPosts(page: Int = 0, size: Int = 2): [Post]
-}
-
-extend type Mutation {
-    createPost(name: String!, author: ID!) : Post
-}
-
-### user.graphqls
+#### user.graphqls
+```graphql
 type User {
     id: ID!
     name: String
@@ -50,6 +37,23 @@ extend type Query {
 
 extend type Mutation {
     createUser(name: String!) : User!
+}
+```
+
+#### post.graphqls
+```graphql
+type Post {
+    id: ID!
+    name: String
+    author: User!
+}
+
+extend type Query {
+    allPosts(page: Int = 0, size: Int = 2): [Post]
+}
+
+extend type Mutation {
+    createPost(name: String!, author: ID!) : Post
 }
 ```
 

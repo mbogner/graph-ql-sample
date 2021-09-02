@@ -12,6 +12,7 @@ The graphql schema of the application is split into multiple files so that every
 Those are placed in src/main/resources/graphql and picked up by spring automatically.
 
 ```graphql
+### _root.graphqls
 # The Root Query for the application
 type Query {
 }
@@ -20,6 +21,7 @@ type Query {
 type Mutation {
 }
 
+### post.graphqls
 type Post {
     id: ID!
     name: String
@@ -34,6 +36,7 @@ extend type Mutation {
     createPost(name: String!, author: ID!) : Post
 }
 
+### user.graphqls
 type User {
     id: ID!
     name: String

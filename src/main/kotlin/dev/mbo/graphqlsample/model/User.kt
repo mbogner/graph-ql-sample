@@ -2,6 +2,8 @@ package dev.mbo.graphqlsample.model
 
 import dev.mbo.graphqlsample.model.base.AbstractEntity
 import java.util.UUID
+import javax.persistence.Access
+import javax.persistence.AccessType
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.OneToMany
@@ -12,6 +14,7 @@ import javax.persistence.Table
 class User : AbstractEntity<UUID>() {
 
     @Id
+    @Access(AccessType.PROPERTY)
     var id: UUID? = null
     var name: String? = null
 

@@ -62,13 +62,17 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
         jdbc:
+          batch_size: 5
+          batch_versioned_data: true
           lob:
             non_contextual_creation: true
           time_zone: UTC
-        generate_statistics: false
-    show-sql: false
+        order_inserts: true
+        order_updates: true
+        generate_statistics: true
+    show-sql: true
   main:
     banner-mode: off
   mvc:
